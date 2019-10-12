@@ -1,2 +1,2 @@
-# Medical Record Management Software
+# Clinical (Record) Management Software
 Medical Record Management Software
