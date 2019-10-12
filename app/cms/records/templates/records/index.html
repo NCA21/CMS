@@ -1,0 +1,24 @@
+<h1>Clinical Management Software</h1>
+
+<h2>Doctor</h2>
+{% for doctor in doctors %}
+    <p>{{ doctor.doc_first }}</p>
+    <p>{{ doctor.doc_last }}</p>
+    <p>{{ doctor.ID }}</p>
+{% endfor %}
+
+<h2>Patient</h2>
+{% for patient in patients %}
+    <p>{{ patient.patient_first }}</p>
+    <p>{{ patient.patient_last }}</p>
+    <p>{{ patient.ethnicity }}</p>
+    <p>{{ patient.AGE }}</p>
+    <p>{{ patient.MEID }}</p>
+{% endfor %}
+
+<h2>Contact </h2>
+{% for contact in contacts %}
+    <p>{{ contact.contact_first }}</p>
+    <p>{{ contact.contact_last }}</p>
+    <p>{{ contact.contact_PHONE }}</p>
+{% endfor %}	

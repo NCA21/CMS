@@ -1,0 +1,31 @@
+[
+{
+    "model": "records.doctor",
+    "pk": 1,
+    "fields": {
+        "doc_first": "Dr.",
+        "doc_last": "McDcreamy",
+        "ID": 1
+    }
+},
+{
+    "model": "records.patient",
+    "pk": 1,
+    "fields": {
+        "patient_first": "Patient",
+        "patient_last": "Uno",
+        "ethinicity": "Caucasian",
+        "AGE": 22,
+        "MEID": 1
+    }
+},
+{
+    "model": "records.contact",
+    "pk": 1,
+    "fields": {
+        "contact_first": "Contact",
+        "contact_last": "Uno",
+        "contact_PHONE": "123456789
+    }
+}
+]

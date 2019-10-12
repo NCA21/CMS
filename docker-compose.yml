@@ -1,0 +1,28 @@
+version: "3"
+services:
+  mysql:
+    image: mysql:8.0.17
+    networks:
+      backend:
+        aliases:
+          - db
+    volumes:
+      - ./init.sql:/data/application/init.sql
+      - ./db:/var/lib/mysql
+    command: --init-file /data/application/init.sql
+    environment:
+      - MYSQL_ROOT_PASSWORD=$$3cureUS
+      - MYSQL_DATABASE=db
+      
+  models:
+    image: tp33/django
+    volumes:
+      - ./app:/app
+    ports:
+      - "8001:8000"
+    networks:
+      - backend
+    command: bash -c "mod_wsgi-express start-server --working-directory  ./cms --reload-on-changes ./cms/cms/wsgi.py && python ./app/cms/manage.py makemigrations && python .app/cms/manage.py migrate"
+
+networks:
+  backend:
