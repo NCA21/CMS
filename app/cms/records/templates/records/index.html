@@ -1,24 +1,205 @@
-<h1>Clinical Management Software</h1>
+{% load static %}
+<html>
+    <head>
+     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+     <link href='https://fonts.googleapis.com/css?family=Exo+2:400,100' rel='stylesheet' type='text/css'>
+     <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">        
+ <script src="https://kit.fontawesome.com/de4b28348d.js" crossorigin="anonymous"></script>
+     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <style>
+body {
+  background-color: #eee;
+  font-family: sans-serif; 
+  overflow: hidden;
+}
+.page-header {
+    background: #fff;
+    margin: -5px;
+    width: 100%;
+    padding: 20px 40px;
+  -webkit-box-shadow: 2px 2px 3px -1px rgba(0,0,0,0.35);    
+    color: #ccc;
+    text-transform: uppercase;
+}
+.page-header h3 {
+     font-size: 34px;
+     font-family: 'Exo 2', sans-serif;
+     font-weight: 100;
+     background: linear-gradient(to right, #30CFD0 0%, #190867 100%);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+}
+h1 {
+  color: #190867;
+  padding-bottom: 25px;
+}
+table {
+  width: 100%;
+}
+th {
+  color: #fff;
+  padding: 10px;
+  background: #190867;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+tr:nth-of-type(odd) {
+  background: rgba(0,0,0,.05);
+}
+td {
+  display: block;
+  border-bottom: 1px solid #ccc;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
 
-<h2>Doctor</h2>
+.tabs{
+    width: 900px;
+    display: block;
+    margin: 40px auto;
+    position: relative;
+}
+
+.tabs .tab{
+    float: left;
+    display: block;
+    width:25%
+}
+
+.tabs .tab>input[type="radio"] {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+.tabs .tab>label {
+    display: block;
+    padding: 16px 21px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    color: #FFF;
+    background: #787575;
+}
+
+.tabs .content {
+    z-index: 0;/* or display: none; */
+    overflow: hidden;
+    width: 850px;
+    padding: 25px;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background: #fff;
+    color: #303030;
+    opacity:0;
+    transition: opacity 4ms ease-out;
+    -webkit-box-shadow: 2px 2px 3px -1px rgba(0,0,0,0.35);
+}
+
+.tabs>.tab>[id^="tab"]:checked + label {
+    top: 0;
+    background: #454444;
+    color: #F5F5F5;
+}
+
+.tabs>.tab>[id^="tab"]:checked ~ [id^="tab-content"] {
+    z-index: 1;/* or display: block; */  
+    opacity: 1;
+    transition: opacity 4ms ease-out;
+}
+</style>
+</head>
+<body>
+<div class="page-header">
+<h3> &#9877;  Clinical Management Software</h3>
+</div>
+
+  <ul class="tabs">
+    
+    <li class="tab">
+        <input type="radio" name="tabs" checked="checked" id="tab1" />
+        <label for="tab1">Doctors</label>
+        <div id="tab-content1" class="content">
+<table>
+<tr>
+<th>Doctor First</th>
+<th>Doctor Last</th>
+<th>Doctor ID</th>
+</tr>
+
 {% for doctor in doctors %}
-    <p>{{ doctor.doc_first }}</p>
-    <p>{{ doctor.doc_last }}</p>
-    <p>{{ doctor.ID }}</p>
+<tr>
+    <td>{{ doctor.doc_first }}</td>
+    <td>{{ doctor.doc_last }}</td>
+    <td>{{ doctor.ID }}</td>
+</tr>
 {% endfor %}
+</table>
+        
+</div>
+    </li>
+    
+    <li class="tab">
+      <input type="radio" name="tabs" id="tab2" />
+      <label for="tab2">Patients</label>   
+      <div id="tab-content2" class="content">
+<table>
+<tr>
+<th>Patient First</th>
+<th>Patient Last</th>
+<th>Patient Ethnicity</th>
+<th>Patient Age</th>
+<th>Patient Medical ID</th>
+</tr>
 
-<h2>Patient</h2>
 {% for patient in patients %}
-    <p>{{ patient.patient_first }}</p>
-    <p>{{ patient.patient_last }}</p>
-    <p>{{ patient.ethnicity }}</p>
-    <p>{{ patient.AGE }}</p>
-    <p>{{ patient.MEID }}</p>
+<tr>
+    <td>{{ patient.patient_first }}</td>
+    <td>{{ patient.patient_last }}</td>
+    <td>{{ patient.ethnicity }}</td>
+    <td>{{ patient.AGE }}</td>
+    <td>{{ patient.MEID }}</td>
+</tr>
 {% endfor %}
+</table>     
+ </div>
+    </li>
 
-<h2>Contact </h2>
+     <li class="tab">
+      <input type="radio" name="tabs" id="tab3" />
+      <label for="tab3">Emergency Contacts</label>   
+      <div id="tab-content3" class="content">
+
+<table>
+<tr>
+<th>Contact First</th>
+<th>Contact Last</th>
+<th>Contact Number</th>
+</tr>
+
 {% for contact in contacts %}
-    <p>{{ contact.contact_first }}</p>
-    <p>{{ contact.contact_last }}</p>
-    <p>{{ contact.contact_PHONE }}</p>
-{% endfor %}	
+<tr>
+    <td>{{ contact.contact_first }}</td>
+    <td>{{ contact.contact_last }}</td>
+    <td>{{ contact.contact_PHONE }}</td>
+</tr>
+{% endfor %}
+</table>   
+ </li>
+
+    <li class="tab">
+      <input type="radio" name="tabs" id="tab4" />
+      <label for="tab4">Add new</label>   
+      <div id="tab-content4" class="content">
+<h1>Add new item</h1>      
+</div>
+    </li>
+    
+  </ul>
+  
+</body>
