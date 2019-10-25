@@ -1,14 +1,14 @@
 from django.shortcuts import render
-from .models import Doctor, Patient, Contact
+from .models import It, Nit, Nurses
 
 # Create your views here.
 def index(request):
-    doctors = Doctor.objects.all()
-    patients = Patient.objects.all()
-    contacts = Contact.objects.all()
-    context = {
-        'doctors': doctors,
-        'patients': patients,
-        'contacts': contacts,
+    it = It.objects.all()
+    nit = Nit.objects.all()
+    nurses = Nurses.objects.all()
+    system = {
+        'it': it,
+        'nit': nit,
+        'nurses': nurses,
     }
-    return render(request, 'records/index.html', context)
+    return render(request, 'records/index.html', system)

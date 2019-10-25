@@ -1,31 +1,33 @@
 [
 {
-    "model": "records.doctor",
+   "model": "records.it",
     "pk": 1,
     "fields": {
-        "doc_first": "Dr.",
-        "doc_last": "McDcreamy",
-        "ID": 1
+        "ip_last": “Martha”,
+        "ip_first": “Jefferson”,
+        "ip_MRN": 123,
+	"ip_cg": 105,
+        "ip_tg": 180
     }
 },
 {
-    "model": "records.patient",
+    "model": "records.nit",
     "pk": 1,
     "fields": {
-        "patient_first": "Patient",
-        "patient_last": "Uno",
-        "ethinicity": "Caucasian",
-        "AGE": 22,
-        "MEID": 1
+        "p_last": "Not",
+        "p_first": "Diabetic",
+        "p_MRN": 321,
+        "p_cg": 180,
+        "p_tg": 180
     }
 },
 {
-    "model": "records.contact",
+    "model": "records.nurses",
     "pk": 1,
     "fields": {
-        "contact_first": "Contact",
-        "contact_last": "Uno",
-        "contact_PHONE": "123456789
+        "n_last": "Hamilton",
+        "n_first": "Alexander",
+        "n_UNIT": 9
     }
 }
 ]

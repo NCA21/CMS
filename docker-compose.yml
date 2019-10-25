@@ -22,9 +22,9 @@ services:
       - "8001:8000"
     networks:
       - backend
-    command: bash -c "sleep 5 && python ./cms/manage.py makemigrations && python ./cms/manage.py migrate && mod_wsgi-express start-server --working-directory  ./cms --reload-on-changes ./cms/cms/wsgi.py"
+    command: bash -c "sleep 5 && python ./cms/manage.py migrate && mod_wsgi-express start-server --working-directory  ./cms --reload-on-changes ./cms/cms/wsgi.py"
     depends_on:
       - mysql   
-   
+  
 networks:
   backend:

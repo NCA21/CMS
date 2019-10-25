@@ -1,18 +1,21 @@
 from django.db import models
 
-class Doctor(models.Model):
-    doc_first = models.CharField(max_length=30)
-    doc_last  = models.CharField(max_length=30)
-#    ID = models.IntegerField()
+class It(models.Model):
+    ip_last = models.CharField(max_length=30)
+    ip_first = models.CharField(max_length=30)
+    ip_MRN = models.IntegerField()
+    ip_cg = models.IntegerField()
+    ip_tg = models.IntegerField()
 
-class Patient(models.Model):
-    patient_first = models.CharField(max_length=30)
-    patient_last = models.CharField(max_length=30)
-    ethnicity = models.CharField(max_length=30)
-    AGE = models.IntegerField()
-#    MEID = models.IntegerField()
+class Nit(models.Model):
+    p_last = models.CharField(max_length=30)
+    p_first = models.CharField(max_length=30)
+    p_MRN = models.IntegerField()
+    p_cg = models.IntegerField()
+    p_tg = models.IntegerField()
 
-class Contact(models.Model):
-    contact_first = models.CharField(max_length=30)
-    contact_last = models.CharField(max_length=30)
-    contact_PHONE = models.IntegerField()
+class Nurses(models.Model):
+    n_last = models.CharField(max_length=30)
+    n_first = models.CharField(max_length=30)
+    n_UNIT = models.IntegerField()
+

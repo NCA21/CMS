@@ -116,80 +116,81 @@ td {
 </head>
 <body>
 <div class="page-header">
-<h3> &#9877;  Clinical Management Software</h3>
+<h3> &#9877; GLYTEC Glucose Management Software</h3>
 </div>
 
   <ul class="tabs">
     
     <li class="tab">
         <input type="radio" name="tabs" checked="checked" id="tab1" />
-        <label for="tab1">Doctors</label>
+        <label for="tab1">Insulin Therapy</label>
         <div id="tab-content1" class="content">
 <table>
 <tr>
-<th>Doctor First</th>
-<th>Doctor Last</th>
-<th>Doctor ID</th>
+<th>Patient Last</th>
+<th>Patient First</th>
+<th>MRN</th>
+<th>Current glucose</th>
+<th>Target glucose</th>
 </tr>
 
-{% for doctor in doctors %}
+{% for insulinpatient in it %}
 <tr>
-    <td>{{ doctor.doc_first }}</td>
-    <td>{{ doctor.doc_last }}</td>
-    <td>{{ doctor.ID }}</td>
+    <td>{{ insulinpatient.ip_last }}</td>
+    <td>{{ insulinpatient.ip_first }}</td>
+    <td>{{ insulinpatient.ip_MRN }}</td>
+    <td>{{ insulinpatient.ip_cg }}</td>
+    <td>{{ insulinpatient.ip_tg }}</td>
 </tr>
 {% endfor %}
 </table>
-        
 </div>
     </li>
     
     <li class="tab">
       <input type="radio" name="tabs" id="tab2" />
-      <label for="tab2">Patients</label>   
+      <label for="tab2">Non-Insulin Therapy</label>   
       <div id="tab-content2" class="content">
 <table>
 <tr>
-<th>Patient First</th>
 <th>Patient Last</th>
-<th>Patient Ethnicity</th>
-<th>Patient Age</th>
-<th>Patient Medical ID</th>
+<th>Patient First</th>
+<th>MRN</th>
+<th>Current glucose</th>
+<th>Target glucose</th>
 </tr>
-
-{% for patient in patients %}
+{% for noninsulinpatient in nit %}
 <tr>
-    <td>{{ patient.patient_first }}</td>
-    <td>{{ patient.patient_last }}</td>
-    <td>{{ patient.ethnicity }}</td>
-    <td>{{ patient.AGE }}</td>
-    <td>{{ patient.MEID }}</td>
+    <td>{{ noninsulinpatient.p_last }}</td>
+    <td>{{ noninsulinpatient.p_first }}</td>
+    <td>{{ noninsulinpatient.p_MRN }}</td>
+    <td>{{ noninsulinpatient.p_cg }}</td>
+    <td>{{ noninsulinpatient.p_tg }}</td>
 </tr>
 {% endfor %}
-</table>     
- </div>
+</table>
+</div>
     </li>
 
      <li class="tab">
       <input type="radio" name="tabs" id="tab3" />
-      <label for="tab3">Emergency Contacts</label>   
+      <label for="tab3">Nurse Assignments</label>   
       <div id="tab-content3" class="content">
-
 <table>
 <tr>
-<th>Contact First</th>
-<th>Contact Last</th>
-<th>Contact Number</th>
-</tr>
-
-{% for contact in contacts %}
+<th>Nurse Last</th>
+<th>Nurse First</th>
+<th>Unit Assignment</th>
+</tr> 
+{% for n in nurses %}
 <tr>
-    <td>{{ contact.contact_first }}</td>
-    <td>{{ contact.contact_last }}</td>
-    <td>{{ contact.contact_PHONE }}</td>
+    <td>{{ n.n_last }}</td>
+    <td>{{ n.n_first }}</td>
+    <td>{{ n.n_UNIT }}</td>
 </tr>
 {% endfor %}
-</table>   
+</table>
+</div>   
  </li>
 
     <li class="tab">
