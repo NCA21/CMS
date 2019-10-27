@@ -1,2 +1,2 @@
-# Clinical (Record) Management Software
-Medical Record Management Software
+# Glucose Management Software
+For insulin therapy candidates and patients
