@@ -1,0 +1,136 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link href='https://fonts.googleapis.com/css?family=Exo+2:400,100' rel='stylesheet' type='text/css'>
+  <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/de4b28348d.js" crossorigin="anonymous"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <title>Glytech{% block title %}{% endblock %}</title>
+ <style>
+ body {
+ background-color: #eee;
+ font-family: sans-serif;
+ overflow: hidden;
+ }
+ .page-header {
+ background: #fff;
+ margin: -5px;
+ width: 100%;
+ padding: 20px 40px;
+ -webkit-box-shadow: 2px 2px 3px -1px rgba(0,0,0,0.35);
+ color: #ccc;
+ text-transform: uppercase;
+ }
+ .page-header h3 {
+  font-size: 34px;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 100;
+  background: linear-gradient(to right, #30CFD0 0%, #190867 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+ }
+ h1 {
+ color: #190867;
+ padding-bottom: 25px;
+ }
+ table {
+ width: 100%;
+ }
+ th {
+ color: #fff;
+ padding: 10px;
+ background: #190867;
+ font-size: 12px;
+ text-transform: uppercase;
+ }
+ tr:nth-of-type(odd) {
+ background: rgba(0,0,0,.05);
+ }
+ td {
+ border-bottom: 1px solid #ccc;
+ }
+ * {
+ margin: 0;
+ padding: 0;
+ }
+
+ .tabs{
+ width: 900px;
+ display: block;
+ margin: 40px auto;
+ position: relative;
+ }
+
+ .tabs .tab{
+ float: left;
+ display: block;
+ width:25%
+ }
+
+ .tabs .tab>input[type="radio"] {
+ position: absolute;
+ top: -9999px;
+ left: -9999px;
+ }
+
+ .tabs .tab>label {
+ display: block;
+ padding: 16px 21px;
+ font-weight: 700;
+ font-size: 14px;
+ text-transform: uppercase;
+ cursor: pointer;
+ position: relative;
+ color: #FFF;
+ background: #787575;
+ }
+
+ .tabs .content {
+ z-index: 0;/* or display: none; */
+ overflow: hidden;
+ width: 850px;
+ padding: 25px;
+ position: absolute;
+ top: 50px;
+ left: 0;
+ background: #fff;
+ color: #303030;
+ opacity:0;
+ transition: opacity 4ms ease-out;
+ -webkit-box-shadow: 2px 2px 3px -1px rgba(0,0,0,0.35);
+ }
+
+ .tabs>.tab>[id^="tab"]:checked + label {
+ top: 0;
+ background: #454444;
+ color: #F5F5F5;
+ }
+
+ .tabs>.tab>[id^="tab"]:checked ~ [id^="tab-content"] {
+ z-index: 1;/* or display: block; */
+ opacity: 1;
+ transition: opacity 4ms ease-out;
+ }
+ </style>
+</head>
+
+<body>
+  <div class="page-header">
+  <h3> &#9877; GLYTECH Glucose Management Software</h3>
+  </div>
+
+    {% block content %}{% endblock %}
+</body>
+
+<script>
+    console.log("User analytics scripts")
+    console.log(window.location.pathname)
+    console.log(window.navigator.language)
+    console.log(window.navigator.platform)
+    console.log(window.navigator.userAgent)
+</script>
+
+</html>
