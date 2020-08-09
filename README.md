@@ -1,6 +1,7 @@
 # Summary
 This project aimed to build a glucose management software for insulin therapy candidates and patients, similar to systems employed in healthcare settings as well as electronic health record software.
 
+```
 ./app
 │
 └───cms
@@ -27,6 +28,7 @@ This project aimed to build a glucose management software for insulin therapy ca
 │   │   db.json
 │   │   manage.py
 │
+```
 
 # Usage
 As specified in the docker-compose.yml file, the app uses MySQL 8.0.
