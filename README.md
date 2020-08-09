@@ -31,7 +31,7 @@ This project aimed to build a glucose management software for insulin therapy ca
 ```
 
 # Usage
-The services that make up the app are defined in ```docker-compose.yml```. To run the app, firstly clone the repoository, change directory to the app, and run ```docker-compoose up```.
+The services that make up the app are defined in ```docker-compose.yml```. To run the app, firstly clone the repoository, change directory to the app, and run ```docker-compose up```.
 
 ```
 git clone https://github.com/ncanna/Glytech
